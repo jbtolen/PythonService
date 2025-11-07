@@ -4,8 +4,12 @@ from PIL import Image
 
 class WasteClassifier:
     def __init__(self):
+        # ✅ Don't reassign sys.stdout (causes runtime crash in hosted envs)
+        # Instead, ensure UTF-8 encoding safely
+        if sys.stdout.encoding != "utf-8":
+            sys.stdout.reconfigure(encoding="utf-8")
+
         # Silence logs and warnings
-        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", write_through=True)
         os.environ["TRANSFORMERS_VERBOSITY"] = "error"
         os.environ["HF_HUB_DISABLE_PROGRESS_BARS"] = "1"
         os.environ["TRANSFORMERS_NO_ADVISORY_WARNINGS"] = "1"
