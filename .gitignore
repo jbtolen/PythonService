@@ -1,0 +1,9 @@
+# .gitignore
+__pycache__/
+*.pyc
+hf_cache/
+*.log
+.env
+venv/
+__pycache__/
+hf_cache/
