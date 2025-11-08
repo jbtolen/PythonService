@@ -1,4 +1,6 @@
-flask
+Flask
+Flask-Cors
+gunicorn
 torch
 transformers
-pillow
+Pillow
