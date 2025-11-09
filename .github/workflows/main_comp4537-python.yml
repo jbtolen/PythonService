@@ -73,4 +73,5 @@ jobs:
         with:
           app-name: 'comp4537-python'
           slot-name: 'Production'
+          package: .
           
