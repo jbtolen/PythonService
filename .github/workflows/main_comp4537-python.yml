@@ -68,10 +68,8 @@ jobs:
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_7E0428439EC145EA8A77D0B84BC949FD }}
 
       - name: 'Deploy to Azure Web App'
-        uses: azure/webapps-deploy@v3
-        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v2
         with:
-          app-name: 'comp4537-python'
-          slot-name: 'Production'
-          package: .
-          
+          app-name: 'comp4537-python-fefechcneneebmee'
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: ./PythonService
